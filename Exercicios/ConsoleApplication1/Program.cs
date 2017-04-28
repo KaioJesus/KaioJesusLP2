@@ -11,52 +11,61 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             int N;
-            string modelo,tipo,tipod;
-            double km,mot;
-            
+            string modelo, valor;
+            double km, pot;
+
             Console.WriteLine("Informe a quantidade de carros no galpão");
             N = Convert.ToInt32(Console.ReadLine());
-                        
+
             for (int i = 0; i < N; i++)
             {
-                Console.WriteLine("Informe o modelo");
+                Console.WriteLine("Informe o modelo do carro");
                 modelo = Console.ReadLine();
 
-                Console.WriteLine("Informe sua quilometragem");
+                Console.WriteLine("Informe a quilometragem do carro");
                 km = Double.Parse(Console.ReadLine());
 
-                Console.WriteLine("Informe a potência do motor");
-                mot = Double.Parse(Console.ReadLine());
+                Console.WriteLine("Informe a potência do motor do carro");
+                pot = Double.Parse(Console.ReadLine());
 
-                if (km <= 5000)
-                {
-                    tipo = "novo";
-                }
-                else if (km > 5000 && km <= 30000)
-                {
-                    tipo = "seminovo";
-                }
-                else
-                {
-                    tipo = "velho";
-                }              
-                
-                if (mot > 200)
-                {
-                    tipod = "potente";
-                }
-                else if (mot >= 120 && mot <= 200)
-                {
-                    tipod = "forte";
-                }
-                else
-                {
-                    tipod = "popular";
-                }               
+                valor = Carro(modelo, km, pot);
 
-                Console.WriteLine("{0} - {1} {2}", modelo, tipo, tipod);
+                Console.WriteLine("{0}", valor);
             }
-
         }
+            string Carro(string mode, double kmt, double pote)
+            {
+                string brabo, tiponsv, tipopfp;
+
+                if (kmt <= 5000)
+                {
+                    tiponsv = "novo";
+                }
+                else if (kmt > 5000 && kmt <= 30000)
+                {
+                    tiponsv = "seminovo";
+                }
+                else
+                {
+                    tiponsv = "velho";
+                }
+
+                if (pote > 200)
+                {
+                    tipopfp = "potente";
+                }
+                else if (pote >= 120 && pote <= 200)
+                {
+                    tipopfp = "forte";
+                }
+                else
+                {
+                    tipopfp = "popular";
+                }
+
+                brabo = mode + " - " + tipod + " - " + tiponsv;
+                return brabo;
+            
+            }
     }
 }
