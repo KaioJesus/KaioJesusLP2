@@ -16,15 +16,17 @@ namespace ConsoleApplication1
 
         static void Main(string[] args)
         {
-            int N;
-            string valor;
+            veiculo automovel;
+            int N, i;
 
             Console.WriteLine("Informe a quantidade de carros no galpão");
             N = Convert.ToInt32(Console.ReadLine());
 
-            for (int i = 0; i < N; i++)
+
+            string[] valor = new string[N];
+
+            for (i = 0; i < N; i++)
             {
-                veiculo automovel;
                 Console.WriteLine("Informe o modelo");
                 automovel.modelo = Console.ReadLine();
 
@@ -34,11 +36,16 @@ namespace ConsoleApplication1
                 Console.WriteLine("Informe a potência do motor");
                 automovel.potencia = Double.Parse(Console.ReadLine());
 
-                valor = Carro(automovel);
+                valor[i] = Carro(automovel);
+
+            }
+
+            for (i = 0; i < N; i++)
+            {
                 Console.WriteLine("{0}", valor);
             }
         }
-        string Carro(veiculo parametro)
+        static string Carro(veiculo parametro)
         {
             string brabo, tiponsv, tipopfp;
 
