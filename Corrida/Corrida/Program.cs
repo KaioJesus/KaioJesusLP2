@@ -11,6 +11,8 @@ namespace Corrida
         static void Main(string[] args)
         {            
             int no = Convert.ToInt32(Console.ReadLine());
+            double tempomenor = 1000;
+            string ganhar = "eu ganhei";
             Comp[] comps = new Comp[no];
             int i;           
             for (i=0;i<no;i++)
@@ -27,6 +29,23 @@ namespace Corrida
                 Console.WriteLine("Informe o tempo da terceira etapa");
                 comps[i].terc = Double.Parse(Console.ReadLine());
             }
+
+            double[] tempoDescarte = new double[no];
+
+            for (int i = 0; i < no; i++)
+            {
+                tempoDescarte[i] = comps[i].temcalcular();
+
+                if (tempoDescarte[i]<tempomenor)
+                {
+                    tempomenor = tempoDescarte[i];
+
+                    ganhar = comps[i].nome;
+                }
+
+            }
+
+            Console.WriteLine(ganhar);
 
             
 //O CPII vai organizar uma competição de corrida, em várias provas de 100m rasos.
