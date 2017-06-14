@@ -10,10 +10,27 @@ namespace ObjetoEmPlano2D
     {
         public int x;
         public int y;
+
         public void AndarParaADireita()
         {
             x=x+3;
         }
+
+        public void AndarParaAEsquerda()
+        {
+            x = x - 3;
+        }
+
+        public void AndarParaCima()
+        {
+            y = y + 3;
+        }
+
+        public void AndarParaBaixo()
+        {
+            y = y - 3;
+        }
+
         public string Coordenadas()
         {
             return String.Format("[{0},{1}]", x, y);

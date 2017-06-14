@@ -29,6 +29,9 @@ namespace ObjetoEmPlano2D
                 if (comando == ConsoleKey.RightArrow)
                 {
                     obj.AndarParaADireita();
+                    obj.AndarParaAEsquerda();
+                    obj.AndarParaCima();
+                    obj.AndarParaBaixo();
                     Console.WriteLine(obj.Coordenadas());
                 }
             }
